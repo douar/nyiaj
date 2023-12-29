@@ -2,7 +2,7 @@ function Home() {
 
     return (
         <div>
-            Log in to Your Account
+            Let's Get Your Njyiaj Under Control!
         </div>
     )
 
