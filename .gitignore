@@ -24,3 +24,4 @@ yarn-error.log*
 
 #keys
 src/.env
+src/reportWebVitals.ts
