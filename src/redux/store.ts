@@ -1,5 +1,7 @@
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
 import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
+import {expenseSlice, ExpenseState} from "./ExpenseSlice";
+import {budgetSlice, BudgetState} from "./BudgetSlice";
 
 // const userPersistConfig = {
 //     key: 'USER',
@@ -9,7 +11,8 @@ import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
 
 export const rootReducer = combineReducers({
     // user: persistReducer(userPersistConfig, userSlice.reducer),
-    // uploads: uploadsSlice.reducer,
+    expense: expenseSlice.reducer,
+    budget: budgetSlice.reducer
 })
 
 export const store = configureStore({
@@ -25,8 +28,8 @@ export const store = configureStore({
 // EXPORTING STATE AS A TYPE ==========================
 // export type RootState = ReturnType<typeof store.getState>
 export type RootState = {
-    // user: UserState,
-    // uploads: UploadsState,
+    expense: ExpenseState,
+    budget: BudgetState
 }
 
 // EXPORTING STORE & REACT dispatch METHOD ============
