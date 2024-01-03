@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
 import Nav from "./components/Nav";
 import Home from './components/Home';
-import Budget from "./components/Budget";
+import BudgetPage from "./components/Budget/BudgetPage";
 import Taxes from "./components/Taxes";
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
               <Nav></Nav>
               <Routes>
                   <Route path="/" element={<Home/>}/>
-                  <Route path="/budget" element={<Budget/>}/>
+                  <Route path="/budget" element={<BudgetPage/>}/>
                   <Route path="/taxes" element={<Taxes/>}/>
               </Routes>
           </div>

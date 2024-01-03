@@ -1,15 +1,29 @@
 import {ActionReducerMapBuilder, createSlice, Slice} from "@reduxjs/toolkit";
 
+export enum ExpenseCategories {
+    housing = "Housing",
+    utilities = "Utilities",
+    personal = "Personal",
+    health = "Health",
+    subscriptions = "Subscriptions",
+    household = "Household",
+    entertainment = "Entertainment",
+    transportation = "Transportation",
+    debt = "Debt",
+    otherExpense = "Other Expense"
+}
+
 export interface ExpenseState {
     expenseName: string,
     expenseAmount: number,
-    expenseActive: boolean
+    expenseActive?: boolean,
+    expenseCategory: string
 }
 
 export const initialExpenseState: ExpenseState = {
     expenseName: "",
     expenseAmount: 0,
-    expenseActive: false
+    expenseCategory: ""
 }
 export const expenseSlice: Slice<ExpenseState> = createSlice({
     name: 'EXPENSE',
@@ -19,6 +33,7 @@ export const expenseSlice: Slice<ExpenseState> = createSlice({
             state.expenseName = action.payload.expenseName
             state.expenseAmount = action.payload.expenseAmount
             state.expenseActive = action.payload.expenseActive
+            state.expenseCategory = action.payload.expenseCategory
         },
     },
     extraReducers: (builder:  ActionReducerMapBuilder<ExpenseState>) => {
